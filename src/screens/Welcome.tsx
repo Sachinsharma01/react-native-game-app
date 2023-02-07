@@ -10,7 +10,7 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import config from '../../config';
 // @ts-ignore
-import GameSvg from '../assets/game.png';
+import GameSvg from '../assets/gaming.svg';
 
 const Welcome = ({navigation}:any) => {
   return (
@@ -19,7 +19,8 @@ const Welcome = ({navigation}:any) => {
         <Text style={styles.text}>Bring thr Gamer within </Text>
       </View> */}
       <View style={styles.imageView}>
-        <Image source={GameSvg} style={styles.image} />
+        {/* <Image source={GameSvg} style={styles.image} /> */}
+        <GameSvg height={300} width={300} />
       </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
         <Text style={styles.buttonText}>Let's Begin</Text>
