@@ -12,17 +12,15 @@ import config from '../../config';
 // @ts-ignore
 import GameSvg from '../assets/gaming.svg';
 
-const Welcome = ({navigation}:any) => {
+const Welcome = ({navigation}: any) => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <View>
-        <Text style={styles.text}>Bring thr Gamer within </Text>
-      </View> */}
       <View style={styles.imageView}>
-        {/* <Image source={GameSvg} style={styles.image} /> */}
         <GameSvg height={300} width={300} />
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Login')}>
         <Text style={styles.buttonText}>Let's Begin</Text>
         <Ionicons name="arrow-forward-outline" color="#fff" size={22} />
       </TouchableOpacity>

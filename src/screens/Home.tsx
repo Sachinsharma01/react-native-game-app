@@ -45,7 +45,7 @@ const Home = () => {
             color="#C6C6C6"
             style={{marginRight: 5}}
           />
-          <TextInput placeholder="Search" />
+          <TextInput placeholder="Search" style={{color: "black"}} />
         </View>
         <View style={styles.upcoming}>
           <Text style={styles.salutationText}>Upcoming Games</Text>

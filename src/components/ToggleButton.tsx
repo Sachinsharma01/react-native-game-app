@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {TouchableOpacity, View, Text, StyleSheet} from 'react-native';
 import {ICustomSwitch} from '../interfaces/ICustomSwitch';
+import config from '../../config';
 
 const ToggleButton = ({
   option1,
@@ -19,7 +20,7 @@ const ToggleButton = ({
         activeOpacity={1}
         onPress={() => updateSwitchState(1)}
         style={{
-          backgroundColor: selection === 1 ? '#AD40AF' : '#e4e4e4',
+          backgroundColor: selection === 1 ? config.constants.primaryColor : '#e4e4e4',
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
@@ -39,7 +40,7 @@ const ToggleButton = ({
         activeOpacity={1}
         onPress={() => updateSwitchState(2)}
         style={{
-          backgroundColor: selection === 2 ? '#AD40AF' : '#e4e4e4',
+          backgroundColor: selection === 2 ? config.constants.primaryColor : '#e4e4e4',
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
