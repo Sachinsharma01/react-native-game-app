@@ -7,41 +7,34 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import React, {useState} from 'react';
-import Feather from 'react-native-vector-icons/Feather';
-import CountryFlag from 'react-native-country-flag';
-import LoginSvg from '../assets/login.svg';
-
+import React, {useContext, useState} from 'react';
+import {AuthContext} from '../context/authContext';
 import config from '../../config';
-const Login = ({navigation}: any) => {
-  const [phone, setPhone]: any = useState('');
+import OTPSvg from '../assets/otp.svg';
 
+const OTP = ({navigation}: any) => {
+  const [phone, setPhone]: any = useState('');
+  const {login, token} = useContext(AuthContext);
+  
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.imageView}>
-        <LoginSvg height={300} width={300} />
+        <OTPSvg height={300} width={300} />
       </View>
       <View style={styles.input}>
-        <Feather
-          name="smartphone"
-          size={20}
-          color="#C6C6C6"
-          style={{marginRight: 5}}
-        />
-        <CountryFlag isoCode="in" size={15} style={{marginRight: 5}} />
         <TextInput
-          placeholder="Enter Phone Number"
-          style={{color: 'black'}}
+          placeholder="Enter OTP"
+          style={{color: 'black', alignSelf: 'center'}}
           keyboardType="numeric"
           value={phone}
-          maxLength={10}
+          maxLength={6}
           onChangeText={e => setPhone(e)}
         />
       </View>
-      <View style={{width: '90%', marginTop: 30}}>
+      <View style={{width: '50%', marginTop: 30}}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('OTP');
+            login();
           }}
           style={{
             backgroundColor: config.constants.primaryColor,
@@ -56,7 +49,7 @@ const Login = ({navigation}: any) => {
               fontSize: 16,
               color: '#fff',
             }}>
-            Login
+            Validate
           </Text>
         </TouchableOpacity>
       </View>
@@ -75,7 +68,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 8,
     alignItems: 'center',
-    width: '90%',
+    width: '70%',
     paddingHorizontal: 10,
     borderColor: config.constants.borderColor,
   },
@@ -86,4 +79,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default OTP;

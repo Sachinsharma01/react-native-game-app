@@ -7,8 +7,21 @@ import Settings from '../screens/Settings';
 import Profile from '../screens/Profile';
 import config from '../../config';
 import Messages from '../screens/Messages';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+const HomeStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
 const BottomTabNavigation = () => {
   return (
     <Tab.Navigator
@@ -21,7 +34,7 @@ const BottomTabNavigation = () => {
       }}>
       <Tab.Screen
         name="Home2"
-        component={Home}
+        component={HomeStack}
         options={{
           tabBarIcon: ({color, size}) => (
             <Ionicons name="ios-home-outline" color={color} size={30} />
