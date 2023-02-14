@@ -26,6 +26,7 @@ const OTP = ({navigation}: any) => {
           placeholder="Enter OTP"
           style={{color: 'black', alignSelf: 'center'}}
           keyboardType="numeric"
+          placeholderTextColor="#000"
           value={phone}
           maxLength={6}
           onChangeText={e => setPhone(e)}

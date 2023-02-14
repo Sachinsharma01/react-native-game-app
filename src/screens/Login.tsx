@@ -31,6 +31,7 @@ const Login = ({navigation}: any) => {
         <CountryFlag isoCode="in" size={15} style={{marginRight: 5}} />
         <TextInput
           placeholder="Enter Phone Number"
+          placeholderTextColor="#000"
           style={{color: 'black'}}
           keyboardType="numeric"
           value={phone}
